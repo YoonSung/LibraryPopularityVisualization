@@ -35,14 +35,13 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Web Crawler -->
+		<!-- jsoup HTML parser library @ http://jsoup.org/ -->
 		<dependency>
-			<groupId>edu.uci.ics</groupId>
-			<artifactId>crawler4j</artifactId>
-			<version>4.0</version>
-			<type>jar</type>
-			<scope>compile</scope>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.1</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

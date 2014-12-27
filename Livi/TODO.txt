@@ -1,0 +1,11 @@
+TODO
+1. 명세 설계
+		Client 요청(android Crop)
+		서버에서 String Parameter를 받아서 구글에 요청 (search=github android crop library) 
+			검색결과 수
+			id(akp_target) - class(srg) - list로 결과페이지 구성	
+2. 명세 구현
+3. Frontend 라이브러리 리서치
+4. Frontend 구현
+
+DONE
