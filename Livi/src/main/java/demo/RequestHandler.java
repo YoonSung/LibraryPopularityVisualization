@@ -22,10 +22,14 @@ public class RequestHandler {
 		try {
 			log.info("crawling start");
 			// TODO
-			Document doc = Jsoup.connect("https://github.com/search?o=desc&q=image+crop&ref=searchresults&s=updated&type=Repositories&utf8=true").get();
-			log.info("doc : {},", doc.getAllElements().toString());
+			Document doc = Jsoup.connect("https://github.com/search?o=desc&p=1&q=+image+crop&ref=searchresults&s=updated&type=Repositories&utf8=true").get();
+			//log.info("doc : {},", doc.getAllElements().toString());
 			Elements eles = doc.select(".repo-list-item");
-			log.info("eles.size() : {}", eles.size());
+			
+			Elements elePageNum = doc.select(".pagination a");
+			log.info("elePageNum Size : {}", elePageNum.size());
+			
+			log.info("lastPageNum : {}", elePageNum.last().previousElementSibling().text());
 			
 			for (Element element : eles) {
 				Elements aTags = element.select(".repo-list-stats a");
