@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/resources/stylesheet/main.css">
 <link rel="stylesheet" href="/resources/stylesheet/container.css">
+<link rel="stylesheet" href="/resources/stylesheet/loading.css">
 <title>Library Popularity Visualization</title>
 <style>
 </style>
@@ -24,6 +25,23 @@
 				<div id="main" role="main">
 					<div id="vis"></div>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="loading">
+		<div id="cover" class="cover">
+			<h1>Data Loading...</h1>
+			<div id="loading" class="ui-circle-loading">
+				<ul class="animate">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
 			</div>
 		</div>
 	</div>

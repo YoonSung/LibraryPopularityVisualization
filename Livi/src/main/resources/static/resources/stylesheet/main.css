@@ -1,9 +1,19 @@
 @import
 	url(http://fonts.googleapis.com/css?family=Open+Sans|Francois+One);
+	
+html {
+	height: 100%;
+	position: relative;
+}
+
 body {
 	color: white;
 	background-color: black;
 	font-family: 'Open Sans', sans-serif;
+	background:#222;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
 }
 #wrapper {
 	margin: 0 auto;
