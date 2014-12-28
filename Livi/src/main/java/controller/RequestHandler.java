@@ -1,5 +1,9 @@
 package controller;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
@@ -42,6 +46,31 @@ public class RequestHandler {
 	@RequestMapping("/test")
 	public String test() {
 		return "test";
+	}
+	
+	@RequestMapping("/testJson")
+	public String loadTestJson() {
+		return getTestJson();
+	}
+	
+	private String getTestJson() {
+		try {
+			FileReader fr = new FileReader(new File("./src/main/resources/test.json"));
+			BufferedReader br = new BufferedReader(fr);
+			
+			StringBuilder sb = new StringBuilder();
+			String readLine = null;
+			while ((readLine = br.readLine()) != null) {
+				sb.append(readLine);
+			}
+			
+			return sb.toString();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;		
 	}
 	
 }
