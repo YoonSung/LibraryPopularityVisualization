@@ -1,4 +1,4 @@
-#loading {
+#loadArea {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -7,11 +7,11 @@
 	background: rgba(0,0,0,0.7);
 }
 
-#loading h1 {
+#loadArea h1 {
 	color: #fff;
 	position: absolute;
-	top: 20%;
-	left: 40%;
+	top: 25%;
+	left: 42%;
 }
 
 .cover{

@@ -1,6 +1,9 @@
 var eResult = document.getElementById("result");
+var eLoading = document.getElementById("loadArea");
 
 function init() {
+	eLoading.style.display = "none";
+	
 	var eInput = document.getElementById("inputfield");
 	var eSubmit = document.querySelector("input[value][type='submit']");
 	eSubmit.addEventListener("click", function(e) {
@@ -11,6 +14,12 @@ function init() {
 
 function showLibraryPopularity(keyword) {
 
+	eLoading.style.display = "inline-block";
+	
+	setTimeout(function() {
+		eLoading.style.display = "none";
+		eResult.className = "on";
+	}, 2000);
 	/*
 	 * var xhr = new XMLHttpRequest(); xhr.open("post", "/library", false);
 	 * 
@@ -21,9 +30,12 @@ function showLibraryPopularity(keyword) {
 	 * charset=UTF-8"); //xhr.load xhr.send("originURL="+keyword);
 	 */
 
-	//eResult.innerText = keyword;
-	if (!eResult.classList.contains("on")) {
-		eResult.classList.add("on");
+	// eResult.innerText = keyword;
+}
+
+function sleep(ms) {
+	ms += new Date().getTime();
+	while (new Date() < ms) {
 	}
 }
 

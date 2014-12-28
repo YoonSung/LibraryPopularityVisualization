@@ -29,7 +29,7 @@
 		</div>
 	</div>
 
-	<div id="loading">
+	<div id="loadArea">
 		<div id="cover" class="cover">
 			<h1>Data Loading...</h1>
 			<div id="loading" class="ui-circle-loading">
