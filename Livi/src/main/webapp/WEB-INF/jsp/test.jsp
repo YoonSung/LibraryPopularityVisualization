@@ -46,6 +46,7 @@ h1 {
 	font-family: 'Francois One', sans-serif;
 	font-size: 1.3em;
 	outline: none;
+	vertical-align: top;
 }
 .button:hover {
 	cursor: pointer;
@@ -74,11 +75,11 @@ h1 {
 </head>
 <body>
 	<div id="wrapper">
-		<h1>Paste Your Long URL Here :)</h1>
+		<h1>Github Library Popularity :)</h1>
 		<div>
 			<form action="#">
 				<input type="text" id="inputfield" /><input class="button"
-					type="submit" value="shorten URL" />
+					type="submit" value="Show" />
 			</form>
 		</div>
 		<div id="result"></div>
@@ -93,13 +94,15 @@ h1 {
 		var eSubmit = document.querySelector("input[value][type='submit']");
 		eSubmit.addEventListener("click", function(e) {
 			e.preventDefault();
-			getShortenURL(eInput.value);
+			showLibraryPopularity(eInput.value);
 		}.bind(this));		
 	}
 	
-	function getShortenURL(sLongURL) {
+	function showLibraryPopularity(keyword) {
+		
+		/*
 		var xhr = new XMLHttpRequest();
-        xhr.open("post", "/", false);
+        xhr.open("post", "/library", false);
         
         xhr.onload = function() {
 			console.log("test : ", xhr.responseText);
@@ -110,7 +113,13 @@ h1 {
         };
         xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=UTF-8");
         //xhr.load
-        xhr.send("originURL="+sLongURL);
+        xhr.send("originURL="+keyword);
+        */
+        
+        eResult.innerText = keyword;
+		if (!eResult.classList.contains("on")) {
+			eResult.classList.add("on");
+		}
 	}
 	
 	document.addEventListener("DOMContentLoaded", init.bind(this));
