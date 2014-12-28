@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import crawler.GithubCrawler;
 
-@RestController
+@Controller
 public class RequestHandler {
 
 	private static final Logger log = LoggerFactory.getLogger(RequestHandler.class);
 
 	@RequestMapping("/")
-	public List<GithubRepositoryMetaData> home(String keyword) {
+	public @ResponseBody List<GithubRepositoryMetaData> home(String keyword) {
 		log.info("keyword : {}", keyword);
 		
 		GithubCrawler githubCrawler = new GithubCrawler("image crop");
@@ -39,4 +39,9 @@ public class RequestHandler {
 		return null;
 	}
 
+	@RequestMapping("/test")
+	public String test() {
+		return "test";
+	}
+	
 }
