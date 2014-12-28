@@ -11,10 +11,7 @@ a, a:visited {
   width: 980px;
   border-left: 2px #ddd solid;
   border-right: 2px #ddd solid;
-}
-
-header {
-  padding: 10px;
+  margin: auto;
 }
 
 #book-title {

@@ -49,7 +49,7 @@ public class RequestHandler {
 	}
 	
 	@RequestMapping("/testJson")
-	public String loadTestJson() {
+	public @ResponseBody String loadTestJson() {
 		return getTestJson();
 	}
 	
@@ -63,6 +63,8 @@ public class RequestHandler {
 			while ((readLine = br.readLine()) != null) {
 				sb.append(readLine);
 			}
+			br.close();
+			fr.close();
 			
 			return sb.toString();
 		} catch (FileNotFoundException e) {
