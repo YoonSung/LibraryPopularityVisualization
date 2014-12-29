@@ -8,7 +8,6 @@ a,a:visited {
 
 #container {
 	width: 980px;
-	border: 2px #ddd solid;
 	margin: auto;
 	overflow: hidden;
 }
