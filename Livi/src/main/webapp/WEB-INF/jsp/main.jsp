@@ -23,6 +23,9 @@
 
 		<div id="result">
 			<div id="status">
+			
+				<div class="rank" style="color: black; font-size: 0.9em; font-style: italic;">Rank</div>
+				<div class="seperator"></div>
 				<div>
 					Star : <span class="star"></span>
 				 / </div>
@@ -34,16 +37,15 @@
 				<div>
 					Total : <span class="total"></span>
 				 </div>
-				 <div style="height: 1px;display:block"></div>
+				 <div class="seperator"></div>
 				<div>
 					Repository : <span class="repo"></span>
 				 / </div>
 
 				<div>
 					LastUpdated : <span class="time"></span>
-					<br />
 				 </div>
-				<div style="height: 1px;display:block"></div>
+				<div class="seperator"></div>
 				<div>
 					{Discription} <br /> <span class="description"></span>
 				</div>

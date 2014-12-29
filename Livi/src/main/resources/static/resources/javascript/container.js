@@ -184,6 +184,7 @@ Bubbles = function() {
 		
 		containerJS.eStatus.classList.add("visible");
 		
+		containerJS.eRank.innerText = "Rank "+d.rank;
 		containerJS.eStar.innerText = d.star;
 		containerJS.eFork.innerText = d.fork;
 		containerJS.eTotal.innerText = d.star + d.fork;
@@ -253,6 +254,7 @@ var containerJS = {
 		return window.getComputedStyle(node, null).getPropertyValue(style);
 	},
 	eStatus : document.getElementById("status"),
+	eRank: document.querySelector("#status .rank"),
 	eStar: document.querySelector("#status .star"),
 	eFork : document.querySelector("#status .fork"),
 	eTotal : document.querySelector("#status .total"),

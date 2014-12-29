@@ -17,6 +17,7 @@ import model.GithubRepositoryMetaData;
 public class GithubCrawler {
 
 	private String keyword;
+	private int rank = 1;
 	
 	private static final Logger log = LoggerFactory.getLogger(GithubCrawler.class);
 
@@ -74,7 +75,8 @@ public class GithubCrawler {
 			String description = element.select(Constant.SELECTOR_GITHUB_DESCRIPTION_FROM_REPOSITORY_ELEMENT).text();
 			String lastUpdatedTime = element.select(Constant.SELECTOR_GITHUB_TIME_FROM_REPOSITORY_ELEMENT).text();
 
-			pageList.add(new GithubRepositoryMetaData(subURL, description, star, fork, lastUpdatedTime));
+			pageList.add(new GithubRepositoryMetaData(rank, subURL, description, star, fork, lastUpdatedTime));
+			++rank;
 		}
 		
 		return pageList;
