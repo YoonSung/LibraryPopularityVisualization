@@ -17,20 +17,11 @@ function showLibraryPopularity(keyword) {
 	eLoading.style.display = "inline-block";
 	
 	setTimeout(function() {
-		eLoading.style.display = "none";
-		eResult.className = "on";
+		containerJS.showContainer("/testJson", function(){
+			eLoading.style.display = "none";
+			eResult.className = "on";
+		});
 	}, 2000);
-	/*
-	 * var xhr = new XMLHttpRequest(); xhr.open("post", "/library", false);
-	 * 
-	 * xhr.onload = function() { console.log("test : ", xhr.responseText);
-	 * eResult.innerText = xhr.responseText; if
-	 * (!eResult.classList.contains("on")) { eResult.classList.add("on"); } };
-	 * xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded;
-	 * charset=UTF-8"); //xhr.load xhr.send("originURL="+keyword);
-	 */
-
-	// eResult.innerText = keyword;
 }
 
 function sleep(ms) {
@@ -40,8 +31,3 @@ function sleep(ms) {
 }
 
 document.addEventListener("DOMContentLoaded", init.bind(this));
-
-/*
- * //test code setTimeout(function() { var result =
- * document.querySelector("#result"); result.classList.add("on"); }, 1000);
- */

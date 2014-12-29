@@ -1,4 +1,4 @@
-var Bubbles, root, texts;
+var Bubbles, root, texts, display;
 
 root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -255,41 +255,17 @@ root.plotData = function(selector, data, plot) {
 	return d3.select(selector).datum(data).call(plot);
 };
 
-texts = [ {
-	key : "sherlock",
-	file : "top_sherlock.csv",
-	name : "The Adventures of Sherlock Holmes"
-}, {
-	key : "aesop",
-	file : "top_aesop.csv",
-	name : "Aesop's Fables"
-}, {
-	key : "alice",
-	file : "alice.csv",
-	name : "Alice's Adventures in Wonderland"
-}, {
-	key : "gulliver",
-	file : "top_gulliver.csv",
-	name : "Gulliver's Travels"
-} ];
+var containerJS = {
+	showContainer: function(url, callback) {
+		var display, key, plot, text;
+		plot = Bubbles();
+		display = function(data) {
+			// console.log(data);
+			callback();
+			return plotData("#vis", data, plot);
+		}.bind(this);
 
-function init() {
-	var display, key, plot, text;
-	plot = Bubbles();
-	display = function(data) {
-		// console.log(data);
-		return plotData("#vis", data, plot);
-	};
-
-	text = texts.filter(function(t) {
-		return t.key === key;
-	})[0];
-	if (!text) {
-		text = texts[0];
+		// return d3.csv("data/" + text.file, display);
+		return d3.json(url, display);
 	}
-
-	// return d3.csv("data/" + text.file, display);
-	return d3.json("/testJson", display);
-}
-
-init();
+};

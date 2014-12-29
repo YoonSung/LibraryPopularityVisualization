@@ -7,23 +7,9 @@ a, a:visited {
 }
 
 #container {
-  padding-top:20px;
   width: 980px;
-  border-left: 2px #ddd solid;
-  border-right: 2px #ddd solid;
+  border: 2px #ddd solid;
   margin: auto;
-}
-
-#book-title {
-  font-family: georgia, "times new roman", times, serif;
-  color: #555;
-  font-size: 2.3em;
-  text-align: center;
-}
-
-#text-select {
-  float:right;
-  margin-right: 10px;
 }
 
 #vis {
@@ -86,10 +72,10 @@ a.bubble-label {
   white-space: nowrap;
 }
 
-footer p {
-  text-align: center;
-  padding-top:20px;
-  padding-bottom:20px;
-  font: 13px sans-serif;
+.bubble-label-name {
+	color: black;
 }
 
+.bubble-label-value {
+	color: black;
+}
