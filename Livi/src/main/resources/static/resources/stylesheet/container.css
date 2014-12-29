@@ -1,81 +1,117 @@
-
 body {
+	
 }
 
-a, a:visited {
-  color:#333;
+a,a:visited {
+	color: #333;
 }
 
 #container {
-  width: 980px;
-  border: 2px #ddd solid;
-  margin: auto;
-}
-
-#vis {
-  overflow: hidden;
-  position: relative;
+	width: 980px;
+	border: 2px #ddd solid;
+	margin: auto;
+	overflow: hidden;
 }
 
 #status {
-  padding:0 0 20px 20px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background: #fff;
+	position: absolute;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+	z-index: 100;
+	width: 100%;
+	margin-top: 460px;
+	padding-bottom: 20px;
+}
+
+#status.visible {
+	left: 0px;
+}
+
+#status div {
+	font-family: font-family : 'Francois One', sans-serif;
+	margin: 0px;
+	color: gray;
+	font-size: 0.3em;
+	display: inline-block;
+	margin-top: -20px;
+}
+
+#status span {
+	font-size: 0.8em;
+	color: black;
+	font-style: italic;
+	vertical-align: middle;
+}
+
+#vis {
+	overflow: hidden;
+	position: relative;
 }
 
 #controls {
-  padding: 20px;
-  background-color: #eee;
-  margin: 10px;
-  width: 350px;
+	padding: 20px;
+	background-color: #eee;
+	margin: 10px;
+	width: 350px;
 }
 
 #bubble-background {
-  fill: none;
-  pointer-events: all;
+	fill: none;
+	pointer-events: all;
 }
 
 .bubble-node {
-  /* fill: #d1e0f3; */
-  fill: #DCE9BE;
+	/* fill: #d1e0f3; */
+	fill: #DCE9BE;
 }
 
 .bubble-hover {
-  /* fill: #b8c7d9; */
-  fill: #E8E9E7;
+	/* fill: #b8c7d9; */
+	fill: #E8E9E7;
 }
 
 .bubble-selected {
-  /* fill: #a8c8ee;  */
-  fill: #CEE98F;
-  /* stroke: #6081a3; */
-  stroke: #A6BA92;
-  stroke-width: 1.5px;
+	/* fill: #a8c8ee;  */
+	fill: #CEE98F;
+	/* stroke: #6081a3; */
+	stroke: #A6BA92;
+	stroke-width: 1.5px;
 }
 
 .active {
-  color: #A6BA92
+	color: #A6BA92
 }
 
 a.bubble-label {
-  font-family: georgia, "times new roman", times, serif;
-  color: inherit;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  line-height: 1em;
-  position: absolute;
+	font-family: georgia, "times new roman", times, serif;
+	color: inherit;
+	cursor: pointer;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1em;
+	position: absolute;
 }
 
-
 .bubble-label .bubble-label-value {
-  font: 11px sans-serif;
-  white-space: nowrap;
+	font: 11px sans-serif;
+	white-space: nowrap;
 }
 
 .bubble-label-name {
-	color: black;
+	color: rgb(51, 51, 51);
+	font-family: georgia, 'times new roman', times, serif;
+	text-align: center;
+	text-decoration: none;
+	padding-bottom: 3px;
 }
 
 .bubble-label-value {
-	color: black;
+	color: rgb(51, 51, 51);
 }

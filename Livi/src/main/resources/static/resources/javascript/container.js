@@ -3,7 +3,7 @@ var Bubbles, root, texts, display;
 root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
 Bubbles = function() {
-	var chart, clear, click, collide, collisionPadding, connectEvents, data, force, gravity, hashchange, height, idValue, jitter, label, margin, maxRadius, minCollisionRadius, mouseout, mouseover, node, rScale, rValue, textValue, tick, transformData, update, updateActive, updateLabels, updateNodes, width;
+	var chart, clear, click, collide, collisionPadding, connectEvents, data, force, gravity, height, idValue, jitter, label, margin, maxRadius, minCollisionRadius, mouseout, mouseover, node, rScale, rValue, textValue, tick, transformData, update, updateActive, updateLabels, updateNodes, width;
 	width = 980;
 	height = 510;
 	data = [];
@@ -83,8 +83,6 @@ Bubbles = function() {
 			label = d3.select(this).selectAll("#bubble-labels").data([ data ])
 					.enter().append("div").attr("id", "bubble-labels");
 			update();
-			hashchange();
-			return d3.select(window).on("hashchange", hashchange);
 		});
 	};
 	update = function() {
@@ -191,25 +189,28 @@ Bubbles = function() {
 		return location.replace("#");
 	};
 	click = function(d) {
-		location.replace("#" + encodeURIComponent(idValue(d)));
+		
+		containerJS.eStatus.classList.add("visible");
+		
+		containerJS.eStar.innerText = d.star;
+		containerJS.eFork.innerText = d.fork;
+		containerJS.eTotal.innerText = d.star + d.fork;
+		containerJS.eRepository.innerText = "https://github.com"+d.url;
+		containerJS.eTime.innerText = d.lastUpdatedTime;
+		containerJS.eDescription.innerText = d.description;
+
 		return d3.event.preventDefault();
-	};
-	hashchange = function() {
-		var id;
-		id = decodeURIComponent(location.hash.substring(1)).trim();
-		return updateActive(id);
 	};
 	updateActive = function(id) {
 		node.classed("bubble-selected", function(d) {
 			return id === idValue(d);
 		});
-		if (id.length > 0) {
-			return d3.select("#status").html(
-					"<h3>The word <span class=\"active\">" + id
-							+ "</span> is now active</h3>");
-		} else {
-			return d3.select("#status").html("<h3>No word is active</h3>");
-		}
+		//if (id.length > 0) {
+			//return d3.select("#status").html(
+			//		"<div><p>The word" + id+ "is now active</div>");
+		//} else {
+			//return d3.select("#status").html("<h3>No word is active</h3>");
+		//}
 	};
 	mouseover = function(d) {
 		return node.classed("bubble-hover", function(p) {
@@ -256,6 +257,17 @@ root.plotData = function(selector, data, plot) {
 };
 
 var containerJS = {
+	getStyle: function(node, style) {
+		return window.getComputedStyle(node, null).getPropertyValue(style);
+	},
+	eStatus : document.getElementById("status"),
+	eStar: document.querySelector("#status .star"),
+	eFork : document.querySelector("#status .fork"),
+	eTotal : document.querySelector("#status .total"),
+	eRepository : document.querySelector("#status .repo"),
+	eTime : document.querySelector("#status .time"),
+	eDescription : document.querySelector("#status .description"),
+	
 	showContainer: function(url, callback) {
 		var display, key, plot, text;
 		plot = Bubbles();

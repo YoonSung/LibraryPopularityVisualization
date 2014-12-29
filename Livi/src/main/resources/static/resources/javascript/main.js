@@ -21,7 +21,7 @@ function showLibraryPopularity(keyword) {
 			eLoading.style.display = "none";
 			eResult.className = "on";
 		});
-	}, 2000);
+	}, 0);
 }
 
 function sleep(ms) {
