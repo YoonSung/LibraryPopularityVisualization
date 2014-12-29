@@ -18,22 +18,14 @@ Bubbles = function() {
 	maxRadius = 65;
 	rScale = d3.scale.sqrt().range([ 0, maxRadius ]);
 	rValue = function(d) {
-		// return parseInt(d.count);
 		var total = (d.star + d.fork);
 
-		// if (total < 200)
-		// return 200;
-		// else
 		return total;
 	};
 	idValue = function(d) {
-		// console.log("idValue : ", d);
-		// return d.name;
 		return d.url;
 	};
 	textValue = function(d) {
-		// return "★"+d.star+"\n⬇"+d.fork;
-		// return d.description;
 		return d.url.substring(d.url.indexOf("/", 2) + 1);
 	};
 	collisionPadding = 4;
