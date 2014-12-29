@@ -10,7 +10,7 @@ public class GithubRepositoryMetaData {
 	private String lastUpdatedTime;
 	
 	public GithubRepositoryMetaData(String url, String description, String star, String fork, String lastUpdatedTime) {
-		this.url = Constant.GITHUB_URL + url;
+		this.url = url;
 		this.description = description;
 		this.star = Integer.parseInt(star.replaceAll(Constant.NUMBER_SEPERATOR, ""));
 		this.fork = Integer.parseInt(fork.replaceAll(Constant.NUMBER_SEPERATOR, ""));

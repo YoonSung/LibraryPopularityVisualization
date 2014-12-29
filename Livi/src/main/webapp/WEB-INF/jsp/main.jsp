@@ -46,7 +46,7 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="/resources/javascript/lib/d3.js"></script>
+<script type="text/javascript" src="/lib/javascript/d3.js"></script>
 <script type="text/javascript" src="/resources/javascript/container.js"></script>
 <script type="text/javascript" src="/resources/javascript/main.js"></script>
 </html>

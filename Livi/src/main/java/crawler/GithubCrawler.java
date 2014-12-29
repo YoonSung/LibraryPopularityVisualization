@@ -84,6 +84,6 @@ public class GithubCrawler {
 		return Constant.GITHUB_URL+"/search?o=desc&p="
 				+ pageNumber
 				+ "&q="+keyword.replaceAll(" ", "+")
-				+ "&ref=searchresults&s=updated&type=Repositories&utf8=true";
+				+ "&s=stars&type=Repositories&utf8=true";
 	}
 }
