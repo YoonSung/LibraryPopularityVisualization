@@ -10,18 +10,29 @@ function init() {
 		e.preventDefault();
 		showLibraryPopularity(eInput.value);
 	}.bind(this));
+	
+	document.querySelector("input.test").addEventListener("click", function(e) {
+		e.preventDefault();
+
+		eLoading.style.display = "inline-block";
+		
+		setTimeout(function() {
+			containerJS.showContainer("/testJson", function(){
+				eLoading.style.display = "none";
+				eResult.className = "on";
+			});
+		}, 2000);
+	}.bind(this));
 }
 
 function showLibraryPopularity(keyword) {
 
 	eLoading.style.display = "inline-block";
 	
-	setTimeout(function() {
-		containerJS.showContainer("/testJson", function(){
-			eLoading.style.display = "none";
-			eResult.className = "on";
-		});
-	}, 0);
+	containerJS.showContainer("/getJson/"+keyword, function(){
+		eLoading.style.display = "none";
+		eResult.className = "on";
+	});
 }
 
 function sleep(ms) {

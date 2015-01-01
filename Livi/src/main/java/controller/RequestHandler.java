@@ -31,7 +31,8 @@ public class RequestHandler {
 	@RequestMapping("/getJson/{keyword}")
 	public @ResponseBody List<GithubRepositoryMetaData> home(@PathVariable String keyword) {
 		log.info("keyword : {}", keyword);
-		GithubCrawler githubCrawler = new GithubCrawler("image crop");
+		//GithubCrawler githubCrawler = new GithubCrawler("image crop");
+		GithubCrawler githubCrawler = new GithubCrawler(keyword);
 		
 		try {
 			return githubCrawler.getMetaDataList();

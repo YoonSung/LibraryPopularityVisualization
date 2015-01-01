@@ -18,6 +18,7 @@
 			<form action="#">
 				<input type="text" id="inputfield" /><input class="button"
 					type="submit" value="Show" />
+					<input class="button test" type="submit" value="Test" />
 			</form>
 		</div>
 
